@@ -1,0 +1,33 @@
+server:
+  port: 8080
+  servlet:
+    path: /
+logging:
+  level:
+    cn.itcast: debug
+    #org.springframework: debug
+spring:
+  application:
+    name: consumer-service
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/yun6
+    username: root
+    password: root
+  thymeleaf:
+    cache: false
+    # thymeleaf页面模板配置
+    prefix: classpath:/templates/
+    suffix: .html
+mybatis:
+  #引入通用mapper后，自动开启驼峰
+  #configuration:
+    #map-underscore-to-camel-case: true
+  type-aliases-package: cn.itcast.user.pojo
+  #mapper-locations: mapper/*.xml
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:10086/eureka,http://127.0.0.1:10087/eureka
+
+
